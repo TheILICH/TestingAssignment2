@@ -14,4 +14,5 @@ Valid Login Test
     Input Password    id:loginpassword    ${password}
     Click Element    xpath://button[text()='Log in']
     Wait Until Element Is Visible    id:nameofuser    10s
+    Sleep    10s
     [Teardown]    Close Browser

@@ -40,6 +40,5 @@ Delete Item From Cart Test
     # Delete item from cart instead of placing order
     Wait Until Element Is Visible    css:#tbodyid > tr > td:nth-child(4) > a    10s
     Execute Javascript    document.querySelector('#tbodyid > tr > td:nth-child(4) > a').click()
-    Sleep   2s
-
+    Sleep    10s
     [Teardown]    Close Browser

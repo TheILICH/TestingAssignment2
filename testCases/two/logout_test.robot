@@ -19,4 +19,5 @@ Valid Logout Test
     Wait Until Element Is Visible    css:#logout2    10s
     Execute Javascript    document.querySelector('#logout2').click()
     Wait Until Element Is Visible    css:#login2    10s
+    Sleep    10s
     [Teardown]    Close Browser

@@ -47,5 +47,5 @@ Buy Product Test
     Input Text    css:#card    13
     Sleep    2s
     Execute Javascript    document.querySelector('#orderModal > div > div > div.modal-footer > button.btn.btn-primary').click()
-    Sleep    2s
+    Sleep    10s
     [Teardown]    Close Browser
