@@ -1,0 +1,21 @@
+Test Case: Buy Product Test on DemoBlaze
+
+Purpose: Automate the process of logging in, adding the first product to the cart, and completing a purchase.
+
+Steps:
+
+1. Open Chrome and go to DemoBlaze.
+
+2. Log in using credentials from a Python file.
+
+3. Select the first product (Samsung galaxy s6) using JavaScript.
+
+4. Add the product to the cart, handle the browser alert.
+
+5. Go to the home page, then open the cart.
+
+6. Click "Place Order" and fill in the required fields(only Name and Credit card fields are required).
+
+7. Confirm purchase by submitting the form.
+
+8. Close browser.

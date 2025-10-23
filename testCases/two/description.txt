@@ -1,0 +1,19 @@
+Test Case: Valid Logout Test on DemoBlaze
+
+Purpose: Automate logout after login.
+
+Steps:
+
+1. Open Chrome and go to DemoBlaze.
+
+2. Scroll to and click login button (#login2) using JavaScript.
+
+3. Enter username and password, then log in.
+
+4. Wait for user login confirmation.
+
+5. Scroll to and click logout button (#logout2) using JavaScript.
+
+6. Verify login button is visible again.
+
+7. Close browser.

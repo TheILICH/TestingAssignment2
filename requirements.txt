@@ -1,0 +1,4 @@
+robotframework>=5.0
+robotframework-seleniumlibrary>=6.0
+selenium>=4.10
+webdriver-manager>=4.0  

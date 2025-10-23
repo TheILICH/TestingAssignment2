@@ -1,0 +1,17 @@
+Test Case: Valid Login Test on DemoBlaze
+
+Purpose: Automate login using credentials from a Python file.
+
+Steps:
+
+1. Open Chrome and go to DemoBlaze.
+
+2. Scroll to and click login button (#login2) using JavaScript.
+
+3. Wait for login form, enter username and password.
+
+4. Click Log in button.
+
+5. Verify user is logged in by checking user element visibility.
+
+6. Close browser.

@@ -1,0 +1,19 @@
+Test Case: Delete Item From Cart Test on DemoBlaze
+
+Purpose: Automate logging in, adding a product to the cart, and deleting it from the cart.
+
+Steps:
+
+1. Open Chrome and go to DemoBlaze.
+
+2. Log in using credentials from a Python file.
+
+3. Select the first product (Samsung galaxy s6) using JavaScript.
+
+4. Add the product to the cart, handle the browser alert.
+
+5. Go to the home page, then open the cart.
+
+6. Delete the product from the cart using the Delete button.
+
+7. Wait briefly to see the result, then close browser.
