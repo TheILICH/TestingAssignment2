@@ -50,6 +50,6 @@ robot delete_test.robot
   - Test result files (`log.html`, `output.xml`, `report.html`)
   - `Screenshot_terminal.png` showing a screenshot of the successful terminal run
   - `description.txt` describing that test case
-  - A `Sleep 2s` was added in the scripts for test cases three and four so that test actions remain visible long enough to verify they worked.
+  - A `Sleep 5s` was added in the scripts at the end so that test actions remain visible long enough to verify they worked.
 
 
