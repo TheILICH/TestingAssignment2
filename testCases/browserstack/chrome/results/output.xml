@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2025-11-29T08:08:31.090441" rpa="false" schemaversion="5">
+<suite id="s1" name="Buy Test &amp; Delete Test &amp; Login Test &amp; Logout Test">
+<suite id="s1-s1" name="Buy Test" source="C:\Users\iliya\Desktop\masters\testing\task2\testCases\browserstack\chrome\buy_test.robot">
+<test id="s1-s1-t1" name="Buy Product Test" line="6">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-29T08:08:31.264618" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000028394F84590&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-29T08:08:31.264618" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>set_capability</arg>
+<arg>bstack:options</arg>
+<arg>${{{"buildName": "Chrome - Buy", "sessionName": "Test 3: Buy Product - Chrome"}}}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-11-29T08:08:31.264618" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:08:31.264618" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/' through remote server at 'https://iliyas_vOV0Jg:QzGQMvKnrQsqXqKepRWd@hub-cloud.browserstack.com/wd/hub'.</msg>
+<msg time="2025-11-29T08:08:37.817222" level="INFO">C:\Users\iliya\Desktop\masters\testing\task2\venv\Lib\site-packages\selenium\webdriver\remote\remote_connection.py:421: UserWarning: Embedding username and password in URL could be insecure, use ClientConfig instead
+  headers = self.get_remote_connection_headers(parsed_url, self._client_config.keep_alive)</msg>
+<arg>${baseUrl}</arg>
+<arg>chrome</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-29T08:08:31.264618" elapsed="6.552604"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-29T08:08:37.817222" elapsed="0.358456"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#login2</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:08:38.175678" elapsed="0.481878"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:08:38.664298" level="INFO">Executing JavaScript:
+document.querySelector('#login2').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#login2').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:08:38.657556" elapsed="0.154456"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:loginusername</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:08:38.812012" elapsed="0.395076"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:08:39.213511" level="INFO">Typing text 'theilich' into text field 'id:loginusername'.</msg>
+<arg>id:loginusername</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:08:39.212942" elapsed="0.608591"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:08:39.821533" level="INFO">Typing password into text field 'id:loginpassword'.</msg>
+<msg time="2025-11-29T08:08:56.393856" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:loginpassword</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:08:39.821533" elapsed="16.926124"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:08:56.747993" level="INFO">Clicking element 'xpath://button[text()='Log in']'.</msg>
+<arg>xpath://button[text()='Log in']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:08:56.747993" elapsed="0.405073"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:nameofuser</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:08:57.153066" elapsed="1.407644"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:#tbodyid &gt; div:nth-child(1) &gt; div &gt; div &gt; h4 &gt; a</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:08:58.560710" elapsed="0.131941"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:08:58.692651" level="INFO">Executing JavaScript:
+document.querySelector('#tbodyid &gt; div:nth-child(1) &gt; div &gt; div &gt; h4 &gt; a').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#tbodyid &gt; div:nth-child(1) &gt; div &gt; div &gt; h4 &gt; a').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:08:58.692651" elapsed="0.444260"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Samsung galaxy s6</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:08:59.136911" elapsed="0.516502"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#tbodyid &gt; div.row &gt; div &gt; a</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:08:59.653413" elapsed="0.267924"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:08:59.921337" level="INFO">Executing JavaScript:
+document.querySelector('#tbodyid &gt; div.row &gt; div &gt; a').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#tbodyid &gt; div.row &gt; div &gt; a').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:08:59.921337" elapsed="0.166928"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:00.088265" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-11-29T08:09:00.088265" elapsed="1.021063"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#navbarExample &gt; ul &gt; li.nav-item.active &gt; a</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:01.109328" elapsed="0.298130"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:01.407458" level="INFO">Executing JavaScript:
+document.querySelector('#navbarExample &gt; ul &gt; li.nav-item.active &gt; a').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#navbarExample &gt; ul &gt; li.nav-item.active &gt; a').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:01.407458" elapsed="0.384568"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>PRODUCT STORE</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:09:01.792026" elapsed="0.212655"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#cartur</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:02.004681" elapsed="0.264162"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:02.268843" level="INFO">Executing JavaScript:
+document.querySelector('#cartur').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#cartur').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:02.268843" elapsed="0.534792"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Place Order</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:09:02.803635" elapsed="0.707067"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#page-wrapper &gt; div &gt; div.col-lg-1 &gt; button</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:03.510702" elapsed="0.259476"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:03.770806" level="INFO">Executing JavaScript:
+document.querySelector('#page-wrapper &gt; div &gt; div.col-lg-1 &gt; button').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#page-wrapper &gt; div &gt; div.col-lg-1 &gt; button').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:03.770806" elapsed="0.117403"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#name</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:03.888209" elapsed="0.257333"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:04.145542" level="INFO">Typing text 'Iliyas' into text field 'css:#name'.</msg>
+<arg>css:#name</arg>
+<arg>Iliyas</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:09:04.145542" elapsed="0.502019"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-29T08:09:05.649008" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-29T08:09:04.648561" elapsed="1.000447"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:05.649008" level="INFO">Typing text '13' into text field 'css:#card'.</msg>
+<arg>css:#card</arg>
+<arg>13</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:09:05.649008" elapsed="0.453208"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-29T08:09:07.102599" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-29T08:09:06.102216" elapsed="1.000383"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:07.102599" level="INFO">Executing JavaScript:
+document.querySelector('#orderModal &gt; div &gt; div &gt; div.modal-footer &gt; button.btn.btn-primary').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#orderModal &gt; div &gt; div &gt; div.modal-footer &gt; button.btn.btn-primary').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:07.102599" elapsed="0.211954"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:body &gt; div.sweet-alert.showSweetAlert.visible &gt; div.sa-button-container &gt; div &gt; button</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:07.314553" elapsed="0.607013"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-29T08:09:09.922046" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-29T08:09:07.921566" elapsed="2.000480"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:09.922046" level="INFO">Clicking element 'css:body &gt; div.sweet-alert.showSweetAlert.visible &gt; div.sa-button-container &gt; div &gt; button'.</msg>
+<arg>css:body &gt; div.sweet-alert.showSweetAlert.visible &gt; div.sa-button-container &gt; div &gt; button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:09:09.922046" elapsed="0.589818"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-29T08:09:12.512085" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-29T08:09:10.511864" elapsed="2.000221"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:12.512085" level="INFO">Executing JavaScript:
+browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Purchase successful"}}
+Without any arguments.</msg>
+<arg>browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Purchase successful"}}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:12.512085" elapsed="0.325198"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-11-29T08:09:12.837283" elapsed="1.091016"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>Mark Test Failed</arg>
+<arg>AND</arg>
+<arg>Close All Browsers</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-11-29T08:09:13.928299" elapsed="0.000000"/>
+</kw>
+<doc>Buy product test on Chrome via BrowserStack</doc>
+<status status="PASS" start="2025-11-29T08:08:31.264618" elapsed="42.663681"/>
+</test>
+<status status="PASS" start="2025-11-29T08:08:31.106324" elapsed="42.829060"/>
+</suite>
+<suite id="s1-s2" name="Delete Test" source="C:\Users\iliya\Desktop\masters\testing\task2\testCases\browserstack\chrome\delete_test.robot">
+<test id="s1-s2-t1" name="Delete Item From Cart Test" line="6">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-29T08:09:13.942442" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000028394F28E10&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-29T08:09:13.942442" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>set_capability</arg>
+<arg>bstack:options</arg>
+<arg>${{{"buildName": "Chrome - Delete", "sessionName": "Test 4: Delete Item - Chrome"}}}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:13.942442" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:13.942442" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/' through remote server at 'https://iliyas_vOV0Jg:QzGQMvKnrQsqXqKepRWd@hub-cloud.browserstack.com/wd/hub'.</msg>
+<arg>${baseUrl}</arg>
+<arg>chrome</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-29T08:09:13.942442" elapsed="6.556845"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-29T08:09:20.499287" elapsed="0.404487"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#login2</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:20.903774" elapsed="0.569958"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:21.474552" level="INFO">Executing JavaScript:
+document.querySelector('#login2').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#login2').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:21.473732" elapsed="0.134745"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:loginusername</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:21.624374" elapsed="0.576421"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:22.203097" level="INFO">Typing text 'theilich' into text field 'id:loginusername'.</msg>
+<arg>id:loginusername</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:09:22.200795" elapsed="0.727807"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:22.928602" level="INFO">Typing password into text field 'id:loginpassword'.</msg>
+<msg time="2025-11-29T08:09:23.672620" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:loginpassword</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:09:22.928602" elapsed="1.063598"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:23.992200" level="INFO">Clicking element 'xpath://button[text()='Log in']'.</msg>
+<arg>xpath://button[text()='Log in']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:09:23.992200" elapsed="0.507760"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:nameofuser</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:24.499960" elapsed="1.384046"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:#tbodyid &gt; div:nth-child(1) &gt; div &gt; div &gt; h4 &gt; a</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:09:25.884006" elapsed="0.176114"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:26.061127" level="INFO">Executing JavaScript:
+document.querySelector('#tbodyid &gt; div:nth-child(1) &gt; div &gt; div &gt; h4 &gt; a').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#tbodyid &gt; div:nth-child(1) &gt; div &gt; div &gt; h4 &gt; a').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:26.060120" elapsed="0.503719"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Samsung galaxy s6</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:09:26.563839" elapsed="0.530504"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#tbodyid &gt; div.row &gt; div &gt; a</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:27.094343" elapsed="0.263936"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:27.359279" level="INFO">Executing JavaScript:
+document.querySelector('#tbodyid &gt; div.row &gt; div &gt; a').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#tbodyid &gt; div.row &gt; div &gt; a').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:27.358279" elapsed="0.128383"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:27.486662" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-11-29T08:09:27.486662" elapsed="0.945435"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#navbarExample &gt; ul &gt; li.nav-item.active &gt; a</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:28.432097" elapsed="0.300211"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:28.732308" level="INFO">Executing JavaScript:
+document.querySelector('#navbarExample &gt; ul &gt; li.nav-item.active &gt; a').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#navbarExample &gt; ul &gt; li.nav-item.active &gt; a').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:28.732308" elapsed="0.361062"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>PRODUCT STORE</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:09:29.094325" elapsed="0.257220"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#cartur</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:29.351867" elapsed="0.266795"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:29.622601" level="INFO">Executing JavaScript:
+document.querySelector('#cartur').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#cartur').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:29.622601" elapsed="0.613252"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Delete</arg>
+<arg>15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:09:30.236858" elapsed="0.609593"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#tbodyid &gt; tr &gt; td:nth-child(4) &gt; a</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:30.847452" elapsed="0.329877"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:31.178332" level="INFO">Executing JavaScript:
+document.querySelector('#tbodyid &gt; tr &gt; td:nth-child(4) &gt; a').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#tbodyid &gt; tr &gt; td:nth-child(4) &gt; a').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:31.178332" elapsed="0.132744"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-29T08:09:34.311857" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-29T08:09:31.311470" elapsed="3.000387"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:34.311857" level="INFO">Executing JavaScript:
+browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Delete successful"}}
+Without any arguments.</msg>
+<arg>browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Delete successful"}}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:34.311857" elapsed="0.441190"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-11-29T08:09:34.753047" elapsed="0.973866"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>Mark Test Failed</arg>
+<arg>AND</arg>
+<arg>Close All Browsers</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-11-29T08:09:35.726913" elapsed="0.000000"/>
+</kw>
+<doc>Delete item test on Chrome via BrowserStack</doc>
+<status status="PASS" start="2025-11-29T08:09:13.935778" elapsed="21.797933"/>
+</test>
+<status status="PASS" start="2025-11-29T08:09:13.935778" elapsed="21.797933"/>
+</suite>
+<suite id="s1-s3" name="Login Test" source="C:\Users\iliya\Desktop\masters\testing\task2\testCases\browserstack\chrome\login_test.robot">
+<test id="s1-s3-t1" name="Valid Login Test" line="6">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-29T08:09:35.733711" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002839124F590&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-29T08:09:35.733711" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>set_capability</arg>
+<arg>bstack:options</arg>
+<arg>${{{"buildName": "Chrome - Login", "sessionName": "Test 1: Login - Chrome"}}}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:35.733711" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:35.733711" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/' through remote server at 'https://iliyas_vOV0Jg:QzGQMvKnrQsqXqKepRWd@hub-cloud.browserstack.com/wd/hub'.</msg>
+<arg>${baseUrl}</arg>
+<arg>chrome</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-29T08:09:35.733711" elapsed="6.222791"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-29T08:09:41.956502" elapsed="1.723976"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#login2</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:43.680478" elapsed="0.492823"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:44.173301" level="INFO">Executing JavaScript:
+document.querySelector('#login2').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#login2').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:44.173301" elapsed="0.123339"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:loginusername</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:44.296640" elapsed="0.486416"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:44.783056" level="INFO">Typing text 'theilich' into text field 'id:loginusername'.</msg>
+<arg>id:loginusername</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:09:44.783056" elapsed="0.713786"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:45.496842" level="INFO">Typing password into text field 'id:loginpassword'.</msg>
+<msg time="2025-11-29T08:09:46.879740" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:loginpassword</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:09:45.496842" elapsed="1.730761"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:47.227603" level="INFO">Clicking element 'xpath://button[text()='Log in']'.</msg>
+<arg>xpath://button[text()='Log in']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:09:47.227603" elapsed="0.784380"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:48.760358" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<arg>id:nameofuser</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:48.011983" elapsed="1.259252"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>PRODUCT STORE</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:09:49.271235" elapsed="0.188497"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#tbodyid &gt; div:nth-child(1)</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:09:49.459732" elapsed="0.376841"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-29T08:09:51.836928" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-29T08:09:49.836573" elapsed="2.000355"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:51.836928" level="INFO">Executing JavaScript:
+browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Login successful"}}
+Without any arguments.</msg>
+<arg>browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Login successful"}}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:51.836928" elapsed="0.359360"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-11-29T08:09:52.196288" elapsed="1.257439"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Mark Test Failed</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-11-29T08:09:53.453727" elapsed="0.000000"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-11-29T08:09:53.453727" elapsed="0.000000"/>
+</kw>
+<arg>Run Keyword If Test Failed</arg>
+<arg>Mark Test Failed</arg>
+<arg>AND</arg>
+<arg>Close All Browsers</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-11-29T08:09:53.453727" elapsed="0.000000"/>
+</kw>
+<doc>Login test on Chrome via BrowserStack</doc>
+<status status="PASS" start="2025-11-29T08:09:35.733711" elapsed="17.720016"/>
+</test>
+<status status="PASS" start="2025-11-29T08:09:35.733711" elapsed="17.722022"/>
+</suite>
+<suite id="s1-s4" name="Logout Test" source="C:\Users\iliya\Desktop\masters\testing\task2\testCases\browserstack\chrome\logout_test.robot">
+<test id="s1-s4-t1" name="Valid Logout Test" line="6">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-29T08:09:53.456100" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000028394138650&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-29T08:09:53.456100" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>set_capability</arg>
+<arg>bstack:options</arg>
+<arg>${{{"buildName": "Chrome - Logout", "sessionName": "Test 2: Logout - Chrome"}}}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-11-29T08:09:53.456100" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:09:53.456100" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/' through remote server at 'https://iliyas_vOV0Jg:QzGQMvKnrQsqXqKepRWd@hub-cloud.browserstack.com/wd/hub'.</msg>
+<arg>${baseUrl}</arg>
+<arg>chrome</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-29T08:09:53.456100" elapsed="6.348539"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-29T08:09:59.804639" elapsed="1.325369"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#login2</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:10:01.130008" elapsed="0.437848"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:10:01.573972" level="INFO">Executing JavaScript:
+document.querySelector('#login2').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#login2').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:10:01.567856" elapsed="0.159792"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:loginusername</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:10:01.727648" elapsed="0.416875"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:10:02.144523" level="INFO">Typing text 'theilich' into text field 'id:loginusername'.</msg>
+<arg>id:loginusername</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:10:02.144523" elapsed="0.774255"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:10:02.919784" level="INFO">Typing password into text field 'id:loginpassword'.</msg>
+<msg time="2025-11-29T08:10:03.345476" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id:loginpassword</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:10:02.918778" elapsed="0.731819"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:10:03.650597" level="INFO">Clicking element 'xpath://button[text()='Log in']'.</msg>
+<arg>xpath://button[text()='Log in']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-29T08:10:03.650597" elapsed="0.458194"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:10:04.787861" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<arg>id:nameofuser</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:10:04.108791" elapsed="1.174364"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#logout2</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:10:05.283155" elapsed="0.423198"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:10:05.706353" level="INFO">Executing JavaScript:
+document.querySelector('#logout2').click()
+Without any arguments.</msg>
+<arg>document.querySelector('#logout2').click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:10:05.706353" elapsed="0.554696"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#login2</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-29T08:10:06.261049" elapsed="0.382754"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>PRODUCT STORE</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-29T08:10:06.643803" elapsed="0.153144"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-29T08:10:08.797199" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-29T08:10:06.796947" elapsed="2.000252"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-29T08:10:08.797199" level="INFO">Executing JavaScript:
+browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Logout successful"}}
+Without any arguments.</msg>
+<arg>browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Logout successful"}}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-29T08:10:08.797199" elapsed="0.331316"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-11-29T08:10:09.128515" elapsed="1.022584"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<arg>Mark Test Failed</arg>
+<arg>AND</arg>
+<arg>Close All Browsers</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-11-29T08:10:10.151099" elapsed="0.000000"/>
+</kw>
+<doc>Logout test on Chrome via BrowserStack</doc>
+<status status="PASS" start="2025-11-29T08:09:53.456100" elapsed="16.694999"/>
+</test>
+<status status="PASS" start="2025-11-29T08:09:53.456100" elapsed="16.701509"/>
+</suite>
+<status status="PASS" start="2025-11-29T08:08:31.090441" elapsed="99.067788"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Buy Test &amp; Delete Test &amp; Login Test &amp; Logout Test" id="s1" pass="4" fail="0" skip="0">Buy Test &amp; Delete Test &amp; Login Test &amp; Logout Test</stat>
+<stat name="Buy Test" id="s1-s1" pass="1" fail="0" skip="0">Buy Test &amp; Delete Test &amp; Login Test &amp; Logout Test.Buy Test</stat>
+<stat name="Delete Test" id="s1-s2" pass="1" fail="0" skip="0">Buy Test &amp; Delete Test &amp; Login Test &amp; Logout Test.Delete Test</stat>
+<stat name="Login Test" id="s1-s3" pass="1" fail="0" skip="0">Buy Test &amp; Delete Test &amp; Login Test &amp; Logout Test.Login Test</stat>
+<stat name="Logout Test" id="s1-s4" pass="1" fail="0" skip="0">Buy Test &amp; Delete Test &amp; Login Test &amp; Logout Test.Logout Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
