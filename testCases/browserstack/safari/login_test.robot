@@ -6,10 +6,10 @@ Variables         ../../../resources/testData.py
 Valid Login Test
     [Documentation]    Login test on Safari via BrowserStack
     
-    ${bstack_options}=    Evaluate    {'buildName': 'Safari - Login', 'sessionName': 'Test 1: Login - Safari', 'os': 'OS X', 'osVersion': 'Ventura'}
-    ${desired_caps}=    Create Dictionary    browserName=safari    browserVersion=latest    bstack:options=${bstack_options}
+    ${safari_options}=    Evaluate    sys.modules['selenium.webdriver'].SafariOptions()    sys, selenium.webdriver
+    Call Method    ${safari_options}    set_capability    bstack:options    ${{{"buildName": "Safari - Login", "sessionName": "Test 1: Login - Safari", "os": "OS X", "osVersion": "Ventura"}}}
     
-    Open Browser    ${baseUrl}    remote_url=${REMOTE_URL}    desired_capabilities=${desired_caps}
+    Open Browser    ${baseUrl}    safari    remote_url=${REMOTE_URL}    options=${safari_options}
     
     Wait Until Element Is Visible    css:#login2    15s
     Execute Javascript    document.querySelector('#login2').click()

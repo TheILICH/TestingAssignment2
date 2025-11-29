@@ -6,12 +6,10 @@ Variables         ../../../resources/testData.py
 Buy Product Test
     [Documentation]    Buy product test on Safari via BrowserStack
     
-    ${desired_caps}=    Create Dictionary
-    ...    browserName=safari
-    ...    browserVersion=latest
-    ...    bstack:options=${{'buildName': 'Safari - Buy', 'sessionName': 'Test 3: Buy Product - Safari', 'os': 'OS X', 'osVersion': 'Ventura'}}
+    ${safari_options}=    Evaluate    sys.modules['selenium.webdriver'].SafariOptions()    sys, selenium.webdriver
+    Call Method    ${safari_options}    set_capability    bstack:options    ${{{"buildName": "Safari - Buy", "sessionName": "Test 3: Buy Product - Safari", "os": "OS X", "osVersion": "Ventura"}}}
     
-    Open Browser    ${baseUrl}    remote_url=${REMOTE_URL}    desired_capabilities=${desired_caps}
+    Open Browser    ${baseUrl}    safari    remote_url=${REMOTE_URL}    options=${safari_options}
     
     Wait Until Element Is Visible    css:#login2    15s
     Execute Javascript    document.querySelector('#login2').click()
@@ -53,9 +51,9 @@ Buy Product Test
     
     Execute Javascript    browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed", "reason": "Purchase successful"}}
     
-    [Teardown]    Run Keyword If Test Failed    Mark Test Failed    ELSE    Close All Browsers
+    [Teardown]    Teardown Actions
 
 *** Keywords ***
-Mark Test Failed
-    Execute Javascript    browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Test failed"}}
+Teardown Actions
+    Run Keyword If Test Failed    Execute Javascript    browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Test failed"}}
     Close All Browsers
