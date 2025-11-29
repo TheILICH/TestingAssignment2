@@ -2,3 +2,4 @@ venv/
 .vscode/
 resources/*
 browserstack.yml
+
