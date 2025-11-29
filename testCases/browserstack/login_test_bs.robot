@@ -2,10 +2,6 @@
 Library           SeleniumLibrary
 Variables         ../../resources/testData.py
 
-*** Variables ***
-${REMOTE_URL}    https://${BS_USERNAME}:${BS_ACCESS_KEY}@hub-cloud.browserstack.com/wd/hub
-${BROWSER}       chrome
-
 *** Test Cases ***
 Valid Login Test BrowserStack
     [Documentation]    Login test running on BrowserStack cloud
