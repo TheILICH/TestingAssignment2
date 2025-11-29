@@ -1,0 +1,74 @@
+Firefox BrowserStack Tests
+
+MAIN KEYWORDS EXPLAINED
+
+Open Browser: Opens Firefox browser on BrowserStack cloud servers using 
+remote_url. This connects to BrowserStack instead of local Firefox.
+
+Wait Until Element Is Visible: Waits up to specified seconds (e.g., 15s) 
+for an element to appear on page before continuing. Prevents clicking 
+elements that haven't loaded yet.
+
+Execute Javascript: Runs JavaScript commands directly in the browser. 
+More reliable than regular clicks for some websites. Example: 
+document.querySelector('#login2').click() finds element by ID and clicks it.
+
+Input Text / Input Password: Types text into input fields. Password variant 
+hides what you type (shows dots instead of characters).
+
+Handle Alert: Deals with JavaScript popup boxes. ACCEPT clicks the OK button.
+
+Close All Browsers: Closes all open browser windows and ends BrowserStack session.
+
+
+Test 1 - Login Test (login_test.robot)
+
+1. Opens demoblaze.com on Firefox via BrowserStack
+2. Waits for login button to be visible
+3. Clicks login button using JavaScript
+4. Enters username and password from testData.py
+5. Clicks Log in button
+6. Verifies username appears (proves login worked)
+7. Reports "PASSED" status to BrowserStack
+
+
+Test 2 - Logout Test (logout_test.robot)
+
+1. Performs login first (same steps as Test 1)
+2. Waits for logout button to appear
+3. Clicks logout button using JavaScript
+4. Verifies login button appears again (proves logout worked)
+5. Reports "PASSED" status to BrowserStack
+
+
+Test 3 - Buy Product Test (buy_test.robot)
+
+1. Logs in
+2. Selects Samsung Galaxy S6 from product list
+3. Clicks "Add to cart" button
+4. Accepts JavaScript alert popup
+5. Navigates to cart page
+6. Fills in purchase form (Name: Iliyas, Card: 13)
+7. Completes purchase
+8. Closes success confirmation popup
+9. Reports "PASSED" status to BrowserStack
+
+
+Test 4 - Delete Item Test (delete_test.robot)
+
+1. Logs in
+2. Adds Samsung Galaxy S6 to cart
+3. Accepts alert popup
+4. Navigates to cart page
+5. Clicks Delete link to remove item from cart
+6. Waits 3 seconds for item removal
+7. Reports "PASSED" status to BrowserStack
+
+
+TEST EXECUTION
+
+Run locally: robot login_test.robot
+Run via Jenkins: Click "Build Now" - All tests run automatically
+Results visible in: Jenkins Console outputs tab + BrowserStack Dashboard with videos
+
+All tests use BrowserStack remote browsers, not local Firefox.
